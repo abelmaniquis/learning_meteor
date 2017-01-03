@@ -4,8 +4,11 @@ import { Tasks } from '../api/tasks.js';
  
 
 class Task extends Component{
+  constructor(props){
+    super(props);
+  }
   toggleChecked(){
-    Tasks.update(this.propd.task._id,{
+    Tasks.update(this.props.task._id,{
       $set: { checked: !this.props.task.checked }
     });  
   }
